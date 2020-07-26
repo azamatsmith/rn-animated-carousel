@@ -7,8 +7,8 @@ const WIDTH = 200;
 
 const StyledText = styled.Text`
   position: absolute;
-  bottom: 20px;
-  left: 2px;
+  bottom: 30px;
+  left: 12px;
   height: ${HEIGHT}px;
   width: ${WIDTH}px;
 

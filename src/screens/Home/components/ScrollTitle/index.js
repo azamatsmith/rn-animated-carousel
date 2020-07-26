@@ -10,7 +10,7 @@ const WIDTH = 320;
 const Container = styled.View`
   position: absolute;
   top: 60px;
-  left: 10px;
+  left: 20px;
   overflow: hidden;
   width: ${WIDTH}px;
   height: ${HEIGHT}px;
@@ -20,7 +20,7 @@ const ScrollText = styled(Animated.Text)`
   font-size: ${HEIGHT}px;
   line-height: ${HEIGHT}px;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 800;
 `;
 
 function ScrollTitle({ data, scrollX, width }) {

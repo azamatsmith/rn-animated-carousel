@@ -8,7 +8,6 @@ const StyledCircle = styled(Animated.View)`
   height: ${({ size }) => size}px;
   width: ${({ size }) => size}px;
   position: absolute;
-  top: 24%;
 `;
 
 function Circle({ color, index, scrollX, width }) {
@@ -36,8 +35,7 @@ function Circle({ color, index, scrollX, width }) {
       style={{
         backgroundColor: color,
         opacity,
-        transform: [{ scale }],
-        top: '15%',
+        transform: [{ scale }, { translateY: '-90%' }],
       }}
     />
   );

@@ -6,7 +6,7 @@ import { Animated } from 'react-native';
 const StyledPage = styled.View`
   align-items: center;
   flex: 1;
-  padding: 80px 30px 20px;
+  padding: 180px 30px 20px;
 `;
 
 const StyledImage = styled(Animated.Image)`
@@ -26,7 +26,10 @@ const Title = styled(Animated.Text)`
 
 const TextContainer = styled.View`
   flex: 0.5;
-  padding-horizontal: 20px;
+  justify-content: flex-end;
+  padding-right: 10px;
+  padding-left: 60px;
+  padding-bottom: 70px;
 `;
 
 const Description = styled(Animated.Text)`
