@@ -1,4 +1,4 @@
-This is a really nice carousel that is inspired by 
+This is a react-native carousel that is inspired by 
 Catalin Miron's version [here](https://www.youtube.com/watch?v=cGTD4yYgEHc&t=456s).
 
 I watched the video then built it from a combination of memory and trial and error.
