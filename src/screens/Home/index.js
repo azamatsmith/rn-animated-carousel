@@ -3,12 +3,23 @@ import React from 'react';
 import styled from 'styled-components/native';
 import { Animated, Dimensions } from 'react-native';
 
+import Circle from './components/Circle';
 import Page from './components/Page';
 import Pagination from './components/Pagination';
 import ScrollTitle from './components/ScrollTitle';
 import SideText from './components/SideText';
 
 import data from './data';
+
+const CircleContainer = styled.View`
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+`;
 
 const StyledHome = styled.View`
   flex: 1;
@@ -22,7 +33,18 @@ function Home() {
   return (
     <StyledHome>
       <SideText />
-      <ScrollTitle />
+      <CircleContainer>
+        {data.map(({ color }, i) => (
+          <Circle
+            key={i}
+            color={color}
+            index={i}
+            scrollX={scrollX}
+            width={WIDTH}
+          />
+        ))}
+      </CircleContainer>
+      <ScrollTitle data={data} scrollX={scrollX} width={WIDTH} />
       <Animated.FlatList
         data={data}
         renderItem={({ item, index }) => (
@@ -38,7 +60,7 @@ function Home() {
         scrollEventThrottle={16}
         showsHorizontalScrollIndicator={false}
       />
-      <Pagination />
+      <Pagination data={data} scrollX={scrollX} width={WIDTH} />
     </StyledHome>
   );
 }

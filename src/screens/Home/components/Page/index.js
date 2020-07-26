@@ -6,22 +6,33 @@ import { Animated } from 'react-native';
 const StyledPage = styled.View`
   align-items: center;
   flex: 1;
-  padding: 20px 40px;
+  padding: 80px 30px 20px;
 `;
 
 const StyledImage = styled(Animated.Image)`
-  height: 300px;
-  width: 300px;
+  resize-mode: contain;
+  height: ${({ width }) => width * 0.75}px;
+  width: ${({ width }) => width * 0.75}px;
+  flex: 0.6;
 `;
 
 const Title = styled(Animated.Text)`
-  font-size: 20px;
+  font-size: 22px;
+  line-height: 30px;
   font-weight: 800;
   text-align: left;
-  width: 100%;
+  text-transform: uppercase;
 `;
 
-const Description = styled(Animated.Text)``;
+const TextContainer = styled.View`
+  flex: 0.5;
+  padding-horizontal: 20px;
+`;
+
+const Description = styled(Animated.Text)`
+  font-size: 18px;
+  line-height: 24px;
+`;
 
 function Page({ index, item, scrollX, width }) {
   const inputRange = [(index - 1) * width, index * width, (index + 1) * width];
@@ -54,18 +65,20 @@ function Page({ index, item, scrollX, width }) {
   return (
     <StyledPage style={{ width }}>
       <StyledImage
+        width={width}
         source={item.image}
-        resizeMode="contain"
         style={{ transform: [{ scale }] }}
       />
-      <Title style={{ opacity, transform: [{ translateX: titleX }] }}>
-        {item.title}
-      </Title>
-      <Description
-        style={{ opacity, transform: [{ translateX: descriptionX }] }}
-      >
-        {item.description}
-      </Description>
+      <TextContainer>
+        <Title style={{ opacity, transform: [{ translateX: titleX }] }}>
+          {item.title}
+        </Title>
+        <Description
+          style={{ opacity, transform: [{ translateX: descriptionX }] }}
+        >
+          {item.description}
+        </Description>
+      </TextContainer>
     </StyledPage>
   );
 }
